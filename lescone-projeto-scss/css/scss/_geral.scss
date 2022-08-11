@@ -1,0 +1,42 @@
+body {
+    background: $bege-claro;
+    border: 10px solid $bege-medio;
+    color: $cinza;
+    //quando for para o tamanho smart(dispositivo móvel)
+    //as bordas cinzas dos cantos saem
+    @include d(s) {
+        border: none;
+    }
+}
+
+// para as imagens ficarem responsivas
+img {
+    display: block;
+    max-width: 100%;
+}
+
+//textos dos parágrafos da página
+p {
+    @include tipo-1(18);
+}
+
+//Títulos principais
+.titulo {
+    @include tipo-1(18);
+    text-transform: uppercase;
+    @include d(s) {
+        margin-bottom: 40px;
+    }
+    &::after {
+        content: '';
+        display: block;
+        width: 75%;
+        float: right;
+        height: 2px;
+        background: $cinza;
+        margin-top: 14px;
+        @include d(m) {
+            width: 60%;
+        }
+    }
+}
